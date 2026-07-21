@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f4f4;
+  --foreground: #000000;
+  
+  --brand-cyan: #00c5e8;
+  --brand-cyan-hover: #13caea;
+  --brand-beige: #eddabe;
+  --brand-gold: #c99951;
+  --brand-green-light: #b7d9c2;
+  --brand-green-dark: #192f20;
+  --brand-gray-dark: #222a2b;
+  --brand-offblack: #232322;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-cyan-brand: var(--brand-cyan);
+  --color-cyan-brand-hover: var(--brand-cyan-hover);
+  --color-beige-brand: var(--brand-beige);
+  --color-gold-brand: var(--brand-gold);
+  --color-green-light-brand: var(--brand-green-light);
+  --color-green-dark-brand: var(--brand-green-dark);
+  --color-gray-dark-brand: var(--brand-gray-dark);
+  --color-offblack-brand: var(--brand-offblack);
+  
+  --font-sans: var(--font-questrial), sans-serif;
+  --font-alt: var(--font-inter), sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-questrial), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-cyan);
+}
+/* Custom Cursor Support */
+@media (min-width: 768px) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+  
+  /* Mantém o cursor de texto padrão para inputs para melhor usabilidade */
+  .custom-cursor-active input,
+  .custom-cursor-active textarea,
+  .custom-cursor-active [contenteditable] {
+    cursor: text !important;
+  }
+}
+
+
+
