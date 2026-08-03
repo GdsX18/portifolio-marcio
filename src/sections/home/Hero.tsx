@@ -17,7 +17,7 @@ export default function Hero() {
 
   useGSAP(
     () => {
-      // Animação de entrada dos elementos
+      // Animação de entrada dos elementos da página
       const tl = gsap.timeline();
 
       tl.fromTo(
@@ -28,8 +28,8 @@ export default function Hero() {
 
       tl.fromTo(
         iconRef.current,
-        { scale: 0.7, opacity: 0, rotate: -15 },
-        { scale: 1, opacity: 1, rotate: 0, duration: 1.0, ease: "back.out(1.7)" },
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 1.2, ease: "power3.out" },
         "-=0.8"
       );
 
@@ -43,11 +43,29 @@ export default function Hero() {
         );
       }
 
-      // Animação suave contínua de respiração
+      // ── Animação Limpa e Contínua em Loop (Flutuação + Rotação Lenta + Glow Ciano) ──
       if (iconRef.current) {
+        // 1. Flutuação vertical suave
         gsap.to(iconRef.current, {
-          y: -8,
-          duration: 3,
+          y: -10,
+          duration: 3.2,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+
+        // 2. Rotação infinita ultra-suave e lenta
+        gsap.to(iconRef.current, {
+          rotate: 360,
+          duration: 25,
+          repeat: -1,
+          ease: "none",
+        });
+
+        // 3. Brilho Ciano pulsa suavemente (aura de néon clean)
+        gsap.to(iconRef.current, {
+          filter: "drop-shadow(0px 0px 28px rgba(0, 229, 255, 0.65))",
+          duration: 2.4,
           repeat: -1,
           yoyo: true,
           ease: "sine.inOut",
@@ -57,15 +75,13 @@ export default function Hero() {
     { scope: containerRef }
   );
 
-  // Animação diferenciada ao passar o mouse sobre o Isologo principal
+  // Efeito interativo clean ao passar o mouse (Suave expansão sem giros bruscos)
   const handleMouseEnter = () => {
     if (!iconRef.current) return;
     gsap.to(iconRef.current, {
-      rotate: "+=360",
-      scale: 1.25,
-      filter: "drop-shadow(0px 10px 25px rgba(4, 218, 255, 0.6))",
-      duration: 0.8,
-      ease: "back.out(1.7)",
+      scale: 1.12,
+      duration: 0.4,
+      ease: "power2.out",
     });
   };
 
@@ -73,8 +89,7 @@ export default function Hero() {
     if (!iconRef.current) return;
     gsap.to(iconRef.current, {
       scale: 1,
-      filter: "drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15))",
-      duration: 0.5,
+      duration: 0.4,
       ease: "power2.out",
     });
   };
@@ -100,13 +115,13 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* Isologo Oficial Studio Neves com Animação Diferenciada de Hover */}
+          {/* Isologo Oficial Studio Neves com Animação Clean em Loop Infinito */}
           <div className="lg:col-span-3 flex justify-end lg:pt-2">
             <div
               ref={iconRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="opacity-0 w-24 h-24 md:w-32 md:h-32 text-cyan-brand relative flex items-center justify-center cursor-pointer transition-all duration-300 filter drop-shadow-md"
+              className="opacity-0 w-24 h-24 md:w-32 md:h-32 text-cyan-brand relative flex items-center justify-center cursor-pointer transition-all duration-300 filter drop-shadow-[0_0_12px_rgba(0,229,255,0.3)]"
             >
               <MonogramN className="w-full h-full text-cyan-brand" />
             </div>
@@ -143,7 +158,7 @@ export default function Hero() {
             </OriginButton>
           </div>
 
-          {/* Card 2: Bloco com Isologo limpo (SEM SETA conforme solicitado) */}
+          {/* Card 2: Bloco com Isologo limpo */}
           <div className="lg:col-span-2 bg-[#e0e0e0] rounded-[40px] flex items-center justify-center p-6 aspect-square max-w-[140px] md:max-w-[160px] w-full mx-auto self-center shadow-sm hover:scale-105 transition-transform duration-300">
             <div className="text-black flex items-center justify-center w-full h-full">
               <MonogramN className="w-14 h-14 text-black" />
