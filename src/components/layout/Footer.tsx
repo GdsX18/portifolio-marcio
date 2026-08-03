@@ -2,153 +2,151 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { Linkedin, Instagram, Facebook, ArrowRight } from "lucide-react";
-import { OriginButton } from "@/components/ui/origin-button";
+import { MonogramN } from "@/components/common/MonogramN";
+import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [consent, setConsent] = useState(false);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setStatus("loading");
-    setTimeout(() => {
-      setStatus("success");
-      setEmail("");
-      setConsent(false);
-    }, 1200);
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
-    <footer className="bg-white pt-16 pb-12 text-black w-full px-6 md:px-10 lg:px-16 overflow-hidden">
-      <div className="w-full">
-        {/* Newsletter Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-12">
-          <div className="lg:col-span-6">
-            <h2 className="text-4xl md:text-6xl font-sans font-light tracking-tight text-black mb-2">
-              Não perca as <br />novidades
-            </h2>
+    <footer className="bg-white pt-16 md:pt-24 pb-12 text-black w-full px-6 md:px-12 lg:px-20 overflow-hidden border-t border-black/10">
+      <div className="max-w-[1850px] mx-auto w-full">
+        {/* ── Top Hero Brand Display (Logo Bem Maior & Estiloso) ── */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 pb-16 border-b border-black/10">
+          <div className="flex flex-col md:flex-row md:items-center gap-6 lg:gap-10">
+            {/* Isologo Oficial em tamanho grande com efeito hover */}
+            <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 text-cyan-brand flex-shrink-0 hover:scale-105 hover:rotate-6 transition-all duration-500 cursor-pointer filter drop-shadow-md">
+              <MonogramN className="w-full h-full text-cyan-brand" />
+            </div>
+
+            <div>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans font-bold tracking-tight text-black uppercase leading-none mb-3">
+                STUDIO NEVES
+              </h2>
+              <p className="font-alt text-sm md:text-base lg:text-lg font-light text-black/60 tracking-wider">
+                Design Gráfico &bull; Comunicação Visual &bull; Produção Gráfica
+              </p>
+            </div>
           </div>
 
-          <div className="lg:col-span-6 flex flex-col justify-between">
-            <p className="text-black/60 font-alt text-sm font-light mb-4">
-              Assine a nossa newsletter semanal.
+          {/* Tagline / Frase de Marca */}
+          <div className="flex flex-col lg:items-end gap-3 max-w-md">
+            <span className="px-4 py-1.5 bg-black text-cyan-brand font-alt text-xs uppercase tracking-widest font-medium rounded-full self-start lg:self-end">
+              Excelência &amp; Posicionamento
+            </span>
+            <p className="text-xs md:text-sm font-alt font-light text-black/70 leading-relaxed lg:text-right">
+              Transformamos a essência da sua marca em comunicação sólida, memorável e de alto impacto visual.
             </p>
-            <form onSubmit={handleSubmit} className="space-y-4 w-full">
-              <div className="flex flex-col gap-2">
-                <label className="text-xs text-black/50 font-alt font-light">Email *</label>
-                <div className="flex gap-5 items-center">
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-transparent border-b border-black/20 focus:border-black outline-none w-full text-black font-alt text-sm py-2 transition-colors duration-300"
-                  />
-                  <OriginButton
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="px-7 py-2.5 bg-black hover:bg-black/80 text-white rounded-full font-alt text-sm font-light transition-colors duration-300 disabled:opacity-50 h-auto"
-                    rippleBg="bg-white"
-                    hoverTextColor="!text-black"
+          </div>
+        </div>
+
+        {/* ── 4-Column Clean Grid ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 py-16 text-xs text-black/70 font-alt font-light border-b border-black/10">
+          {/* Coluna 1: Navegação Principal */}
+          <div className="flex flex-col gap-3">
+            <span className="font-sans font-semibold text-black uppercase tracking-widest text-[11px] mb-2 text-black/40">
+              Navegação
+            </span>
+            <Link href="/" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+              Início
+            </Link>
+            <Link href="/portfolio" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+              Portfólio de Projetos
+            </Link>
+            <Link href="/sobre" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+              Expertise &amp; Equipe
+            </Link>
+            <Link href="/solucoes" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+              Soluções Gráficas
+            </Link>
+            <Link href="/contato" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+              Contato Estratégico
+            </Link>
+          </div>
+
+          {/* Coluna 2: Especialidades */}
+          <div className="flex flex-col gap-3">
+            <span className="font-sans font-semibold text-black uppercase tracking-widest text-[11px] mb-2 text-black/40">
+              Especialidades
+            </span>
+            <span className="text-sm text-black/80">Identidade Visual &amp; Branding</span>
+            <span className="text-sm text-black/80">Endomarketing Corporativo</span>
+            <span className="text-sm text-black/80">Design Editorial &amp; Catálogos</span>
+            <span className="text-sm text-black/80">Comunicação de Frota &amp; Sinalização</span>
+            <span className="text-sm text-black/80">Embalagens &amp; Material de Varejo</span>
+          </div>
+
+          {/* Coluna 3: Endereço e Contato */}
+          <div className="flex flex-col gap-3">
+            <span className="font-sans font-semibold text-black uppercase tracking-widest text-[11px] mb-2 text-black/40">
+              Localização &amp; Atendimento
+            </span>
+            <p className="text-sm leading-relaxed text-black/80">
+              Rua Prates, 194 &bull; Bom Retiro<br />
+              São Paulo - SP, 01121-000, Brasil
+            </p>
+            <a
+              href="mailto:contato@studioneves.com.br"
+              className="text-sm text-black/80 hover:text-cyan-brand transition-colors duration-300 mt-1"
+            >
+              contato@studioneves.com.br
+            </a>
+            <span className="text-sm text-black/80 font-medium">(11) 3456-7890</span>
+          </div>
+
+          {/* Coluna 4: Redes Sociais & Políticas */}
+          <div className="flex flex-col gap-3 justify-between">
+            <div>
+              <span className="font-sans font-semibold text-black uppercase tracking-widest text-[11px] mb-4 block text-black/40">
+                Conecte-se Conosco
+              </span>
+              <div className="flex gap-4 mb-6">
+                {["LinkedIn", "Instagram", "Facebook"].map((social) => (
+                  <a
+                    key={social}
+                    href={`https://${social.toLowerCase()}.com`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-1.5 bg-black/5 hover:bg-black hover:text-white text-black text-xs font-alt rounded-full transition-all duration-300"
                   >
-                    Enviar
-                  </OriginButton>
-                </div>
+                    {social}
+                  </a>
+                ))}
               </div>
+            </div>
 
-              <label className="flex items-start gap-3 cursor-pointer group">
-                <input
-                  type="checkbox"
-                  checked={consent}
-                  onChange={(e) => setConsent(e.target.checked)}
-                  className="mt-1 accent-black cursor-pointer"
-                />
-                <span className="text-xs text-black/50 group-hover:text-black/80 transition-colors duration-300 font-alt font-light">
-                  Sim, quero assinar a newsletter
-                </span>
-              </label>
-
-              {status === "loading" && (
-                <p className="text-xs text-black animate-pulse">Inscrevendo...</p>
-              )}
-              {status === "success" && (
-                <p className="text-xs text-green-600">Obrigado por se inscrever!</p>
-              )}
-            </form>
-          </div>
-        </div>
-
-        {/* Giant VILU Text - Alinhado à esquerda, sem bordas em cima e embaixo, e bem maior */}
-        <div className="py-6 overflow-hidden">
-          <h1 className="text-[18vw] md:text-[22vw] font-sans font-normal tracking-[-0.05em] leading-none text-black select-none uppercase text-left">
-            VILU
-          </h1>
-        </div>
-
-        {/* Bottom Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-8 text-xs text-black/60 font-alt font-light">
-          {/* Column 1: Links */}
-          <div className="flex flex-col gap-2">
-            <Link href="/solucoes" className="hover:text-cyan-brand transition-colors duration-300">
-              Soluções
-            </Link>
-            <Link href="/portfolio" className="hover:text-cyan-brand transition-colors duration-300">
-              Portfólio
-            </Link>
-            <Link href="/sobre" className="hover:text-cyan-brand transition-colors duration-300">
-              Expertise
-            </Link>
-            <Link href="/insights" className="hover:text-cyan-brand transition-colors duration-300">
-              Insights
-            </Link>
-            <Link href="/contato" className="hover:text-cyan-brand transition-colors duration-300">
-              Contato
-            </Link>
-          </div>
-
-          {/* Column 2: Address */}
-          <div>
-            <p className="leading-relaxed">
-              Rua Prates, 194 - Bom Retiro<br />
-              São Paulo - SP, 01121-000, Brasil<br />
-              info@nomedosite.com<br />
-              (11) 3456-7890
-            </p>
-          </div>
-
-          {/* Column 3: Socials */}
-          <div className="flex flex-col gap-2">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-brand transition-colors duration-300">
-              LinkedIn
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-brand transition-colors duration-300">
-              Instagram
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-brand transition-colors duration-300">
-              Facebook
-            </a>
-          </div>
-
-          {/* Column 4: Legal & Copyright */}
-          <div className="flex flex-col justify-between gap-4 md:items-end">
-            <div className="flex flex-col md:items-end gap-2">
-              <Link href="/politica-de-privacidade" className="hover:text-cyan-brand transition-colors duration-300">
+            <div className="flex flex-col gap-2 pt-4">
+              <Link href="/politica-de-privacidade" className="text-xs text-black/50 hover:text-black transition-colors">
                 Política de Privacidade
               </Link>
-              <Link href="/politica-de-cookies" className="hover:text-cyan-brand transition-colors duration-300">
+              <Link href="/politica-de-cookies" className="text-xs text-black/50 hover:text-black transition-colors">
                 Política de Cookies
               </Link>
             </div>
-            <p className="text-[10px] text-black/40 mt-auto md:text-right">
-              &copy; 2035 por Vilu. Criado com Wix Studio&trade;
-            </p>
           </div>
+        </div>
+
+        {/* ── Bottom Bar & Back to Top ── */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-alt text-black/50">
+          <div className="flex items-center gap-2">
+            <MonogramN className="w-4 h-4 text-cyan-brand" />
+            <span>&copy; {new Date().getFullYear()} Studio Neves. Todos os direitos reservados.</span>
+          </div>
+
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-2 text-black hover:text-cyan-brand transition-colors duration-300 cursor-pointer py-1 px-3 rounded-full hover:bg-black/5"
+            aria-label="Voltar ao topo"
+          >
+            <span>Voltar ao topo</span>
+            <ArrowUp className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </footer>

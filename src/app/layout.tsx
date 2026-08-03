@@ -18,9 +18,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Vilu | Consultoria e Soluções Digitais Robustas",
-  description: "Oferecemos às empresas a experiência técnica e o suporte estratégico de que precisam para crescer. Construindo soluções robustas para desafios complexos.",
-  keywords: ["Vilu", "Marcio Neves", "Estratégia de produto", "Engenharia de software", "Consultoria de dados", "Transformação digital"],
+  title: "Studio Neves | Design Gráfico & Comunicação Visual",
+  description: "Especialistas em solução de design gráfico, comunicação visual eficaz, estratégias e experiências de marcas e produção gráfica de alto padrão.",
+  keywords: ["Studio Neves", "Marcio Neves", "Design Gráfico", "Comunicação Visual", "Produção Gráfica", "Branding", "27 de Setembro"],
   icons: {
     icon: "/favicon-16x16.png",
     shortcut: "/favicon-16x16.png",

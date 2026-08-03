@@ -3,7 +3,7 @@ import HeroPortfolio from "@/sections/portfolio/HeroPortfolio";
 import PortfolioProjects from "@/sections/portfolio/PortfolioProjects";
 
 export const metadata: Metadata = {
-  title: "Portfólio | Vilu",
+  title: "Portfólio | Studio Neves",
   description: "Conheça os projetos que definem nossa excelência em comunicação visual, endomarketing, marketing institucional e produção gráfica para grandes marcas.",
 };
 

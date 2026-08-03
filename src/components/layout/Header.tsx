@@ -6,12 +6,12 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { MonogramN } from "@/components/common/MonogramN";
 
 const menuItems = [
-  { label: "Soluções", href: "/solucoes" },
   { label: "Portfólio", href: "/portfolio" },
   { label: "Expertise", href: "/sobre" },
-  { label: "Insights", href: "/insights" },
+  { label: "Soluções", href: "/solucoes" },
   { label: "Contato", href: "/contato" },
 ];
 
@@ -51,13 +51,14 @@ export default function Header() {
     >
       <div className="w-full px-6 md:px-10 lg:px-16 flex items-center justify-between h-20 md:h-24">
         {/* Mobile Logo */}
-        <Link href="/" className="flex md:hidden items-center flex-shrink-0">
+        <Link href="/" className="flex md:hidden items-center flex-shrink-0 gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo1-dark.svg"
-            alt="Studio Logo"
+            alt="Studio Neves Logo"
             className="h-10 w-auto"
           />
+          <MonogramN className="w-6 h-6 text-black" />
         </Link>
 
         {/* Esquerda: Navegação + Logo (Desktop) */}
@@ -81,17 +82,17 @@ export default function Header() {
             })}
           </nav>
 
-          <Link href="/" className="flex items-center flex-shrink-0">
+          <Link href="/" className="flex items-center flex-shrink-0 gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo1-dark.svg"
-              alt="Studio Logo"
+              alt="Studio Neves Logo"
               className="h-12 md:h-14 w-auto"
             />
           </Link>
         </div>
 
-        {/* Direita: Redes sociais em texto (Desktop) */}
+        {/* Direita: Redes sociais em texto + Monograma Studio Neves */}
         <div className="hidden md:flex items-center justify-end gap-6 lg:gap-8">
           {socialLinks.map((social) => (
             <a
@@ -104,6 +105,7 @@ export default function Header() {
               {social.label}
             </a>
           ))}
+          <MonogramN className="w-6 h-6 text-black/80 hover:text-cyan-brand transition-colors" />
         </div>
 
         {/* Mobile: Hamburger */}

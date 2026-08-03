@@ -1,6 +1,5 @@
 import Hero from "@/sections/home/Hero";
 import Features from "@/sections/home/Features";
-import HomeInsights from "@/sections/home/HomeInsights";
 import HomeExpertise from "@/sections/home/HomeExpertise";
 import HomeScrollShowcase from "@/sections/home/HomeScrollShowcase";
 import HomeClientes from "@/sections/home/HomeClientes";
@@ -10,7 +9,6 @@ export default function Home() {
     <>
       <Hero />
       <Features />
-      <HomeInsights />
       <HomeExpertise />
       <HomeScrollShowcase />
       <HomeClientes />
