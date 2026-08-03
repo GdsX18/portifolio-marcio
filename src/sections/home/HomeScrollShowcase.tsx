@@ -122,60 +122,60 @@ export default function HomeScrollShowcase() {
         </div>
 
         {/* ═══════════════════════════════════════════════ */}
-        {/* SLIDE 2: Destaques "Natio Produções" e "Seven"  */}
+        {/* SLIDE 2: Soluções de Design & Branding          */}
         {/* ═══════════════════════════════════════════════ */}
         <div ref={slide2Ref} className={`${slideBase} z-10 bg-[#f8f9fa]`}>
           <div className="absolute top-0 left-0 right-0 h-[4px] bg-cyan-brand rounded-t-[40px] z-10" />
 
           <div className="w-full h-full grid grid-cols-1 md:grid-cols-2">
-            {/* Card Natio Produções */}
+            {/* Card 1: Identidade Visual & Branding */}
             <div className="flex flex-col justify-between p-10 md:p-14 lg:p-16 border-b md:border-b-0 md:border-r border-black/10">
               <div>
                 <div className="flex items-center gap-2 text-black/50 text-xs font-alt uppercase tracking-wider mb-4">
                   <MonogramN className="w-5 h-5 text-[#0037F6]" />
-                  <span>Projeto 02 &bull; Editorial &amp; Branding</span>
+                  <span>Solução 01 &bull; Branding &amp; Manual de Marca</span>
                 </div>
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-black mb-6">
-                  Natio Produções
+                  Identidade Visual de Alta Performance
                 </h3>
                 <p className="text-black/70 font-alt text-base md:text-lg leading-relaxed max-w-md mb-8 font-light">
-                  Reformulação de posicionamento de marca e identidade gráfica para grandes produções culturais e eventos corporativos de grande porte.
+                  Desenvolvimento completo de manuais de marca, sistemas tipográficos, paletas de cores e guias de aplicação para presença consistente no mercado.
                 </p>
               </div>
 
               <OriginButton
-                href="/portfolio?project=2"
+                href="/portfolio?project=1"
                 className="self-start px-7 py-3 bg-black text-white hover:bg-cyan-brand hover:text-black rounded-full font-alt text-xs uppercase tracking-wider font-light transition-all duration-300 h-auto flex items-center gap-2"
                 rippleBg="bg-cyan-brand"
                 hoverTextColor="!text-black"
               >
-                <span>Ver Natio no Portfólio</span>
+                <span>Ver Projeto 27 de Setembro</span>
                 <ArrowUpRight className="w-4 h-4" />
               </OriginButton>
             </div>
 
-            {/* Card Seven Iluminações */}
+            {/* Card 2: Sinalização, Frota & Material Promocional */}
             <div className="flex flex-col justify-between p-10 md:p-14 lg:p-16 bg-[#f1f3f5]">
               <div>
                 <div className="flex items-center gap-2 text-black/50 text-xs font-alt uppercase tracking-wider mb-4">
                   <MonogramN className="w-5 h-5 text-black" />
-                  <span>Projeto 03 &bull; Embalagens &amp; Varejo</span>
+                  <span>Solução 02 &bull; Frota &amp; Material Gráfico</span>
                 </div>
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-black mb-6">
-                  Seven Iluminações
+                  Catálogos 3D &amp; Sinalização de Frota
                 </h3>
                 <p className="text-black/70 font-alt text-base md:text-lg leading-relaxed max-w-md mb-8 font-light">
-                  Comunicação para pontos de venda e design de embalagens exclusivas focadas em elevado apelo visual de faturamento no varejo.
+                  Modelagem gráfica tridimensional, catálogos técnicos de peças e padronização visual completa para veículos comerciais e galpões.
                 </p>
               </div>
 
               <OriginButton
-                href="/portfolio?project=3"
+                href="/portfolio?project=1"
                 className="self-start px-7 py-3 bg-black text-white hover:bg-cyan-brand hover:text-black rounded-full font-alt text-xs uppercase tracking-wider font-light transition-all duration-300 h-auto flex items-center gap-2"
                 rippleBg="bg-cyan-brand"
                 hoverTextColor="!text-black"
               >
-                <span>Ver Seven no Portfólio</span>
+                <span>Explorar Detalhes no Portfólio</span>
                 <ArrowUpRight className="w-4 h-4" />
               </OriginButton>
             </div>
@@ -249,16 +249,34 @@ export default function HomeScrollShowcase() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { name: "Rodrigo Moraes", role: "CEO", company: "Natio Produções", projId: 2 },
-                  { name: "Carlos Nogueira", role: "Diretor", company: "Seven Iluminações", projId: 3 },
-                  { name: "Maria Gonçalves", role: "CFO", company: "Laderate", projId: 4 },
+                  {
+                    quote: "O Studio Neves elevou a marca da 27 de Setembro a um nível corporativo impecável. A precisão do catálogo 3D e sinalização de frota superou nossas expectativas.",
+                    name: "Diretoria Executiva",
+                    role: "27 de Setembro",
+                    company: "Peças Automotivas",
+                    projId: 1,
+                  },
+                  {
+                    quote: "Profissionalismo, agilidade e uma entrega de design extremamente sofisticada. O material gráfico gerou forte impacto nos nossos parceiros.",
+                    name: "Gerência de Operações",
+                    role: "Distribuição Nacional",
+                    company: "Setor Automotivo",
+                    projId: 1,
+                  },
+                  {
+                    quote: "A comunicação visual desenvolvida nos deu total autoridade no mercado. O manual de marca é claro, preciso e altamente eficiente.",
+                    name: "Departamento de Marketing",
+                    role: "Comunicação Visual",
+                    company: "Studio Partner",
+                    projId: 1,
+                  },
                 ].map((t, idx) => (
                   <div
                     key={idx}
                     className="bg-black/50 backdrop-blur-md rounded-[24px] p-8 flex flex-col justify-between border border-white/10 hover:border-cyan-brand/50 transition-all duration-300 shadow-md"
                   >
                     <p className="text-white/80 font-alt text-sm font-light leading-relaxed mb-6 italic">
-                      &ldquo;O Studio Neves elevou nossa marca a um nível corporativo impecável. A precisão gráfica e comunicação visual foram fundamentais.&rdquo;
+                      &ldquo;{t.quote}&rdquo;
                     </p>
                     <div className="flex items-center justify-between pt-4 border-t border-white/10">
                       <div>

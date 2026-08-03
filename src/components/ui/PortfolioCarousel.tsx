@@ -4,7 +4,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Sparkles, Shield, Zap, Target, Cpu, CheckCircle2, Eye, Maximize2, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sparkles, Shield, Zap, Target, Cpu, CheckCircle2, Eye, X } from "lucide-react";
 import { OriginButton } from "@/components/ui/origin-button";
 import { MonogramN } from "@/components/common/MonogramN";
 
@@ -20,6 +20,27 @@ export interface ProjectItem {
   colors?: { name: string; hex: string; border?: boolean }[];
   tags?: string[];
 }
+
+// =========================================================================
+// PORTFÓLIO DE PROJETOS DO STUDIO NEVES
+// Para adicionar novos projetos no futuro, basta incluir novos objetos nesta lista!
+//
+// EXEMPLO PARA ADICIONAR NOVO PROJETO:
+// {
+//   id: 2,
+//   title: "Nome do Novo Projeto",
+//   category: "Identidade Visual & Branding",
+//   client: "Nome do Cliente",
+//   year: "2024",
+//   description: "Descrição completa das soluções desenvolvidas...",
+//   image: "/imagem-do-projeto.jpg",
+//   colors: [
+//     { name: "Nome da Cor", hex: "#000000" },
+//     { name: "Outra Cor", hex: "#FFFFFF", border: true },
+//   ],
+//   tags: ["Branding", "Design", "Embalagens"],
+// }
+// =========================================================================
 
 export const portfolioProjectsList: ProjectItem[] = [
   {
@@ -39,206 +60,6 @@ export const portfolioProjectsList: ProjectItem[] = [
     ],
     tags: ["Branding", "Catálogo 3D", "Frota", "Sinalização", "Endomarketing"],
   },
-  {
-    id: 2,
-    title: "Natio Produções",
-    category: "Branding & Editorial",
-    client: "Natio Eventos",
-    year: "2024",
-    description: "Reformulação institucional completa, materiais de apoio e identidade editorial para grandes produções culturais.",
-    image: "/rua1.avif",
-    colors: [
-      { name: "Preto", hex: "#000000" },
-      { name: "Ciano Studio", hex: "#00E5FF" },
-      { name: "Cinza Claro", hex: "#F2F2F2" },
-    ],
-    tags: ["Identidade Visual", "Eventos", "Editorial"],
-  },
-  {
-    id: 3,
-    title: "Seven Iluminações",
-    category: "Design de Embalagens & Varejo",
-    client: "Seven Group",
-    year: "2024",
-    description: "Comunicação visual para pontos de venda e design de embalagens com apelo visual de alto padrão.",
-    image: "/eletrica1.avif",
-    colors: [
-      { name: "Amarelo Neon", hex: "#FFDD00" },
-      { name: "Preto Fosco", hex: "#121212" },
-      { name: "Branco", hex: "#FFFFFF", border: true },
-    ],
-    tags: ["Varejo", "Embalagens", "Pontos de Venda"],
-  },
-  {
-    id: 4,
-    title: "Laderate Finance",
-    category: "Marketing Institucional",
-    client: "Laderate Soluções",
-    year: "2024",
-    description: "Projetos gráficos corporativos, relatórios anuais de sustentabilidade e material de endomarketing.",
-    image: "/pessoas 2.avif",
-    colors: [
-      { name: "Azul Marinho", hex: "#0A192F" },
-      { name: "Verde Esmeralda", hex: "#00B4D8" },
-      { name: "Cinza", hex: "#E0E0E0" },
-    ],
-    tags: ["Corporativo", "Relatório Anual", "Endomarketing"],
-  },
-  {
-    id: 5,
-    title: "Veloce Auto Tech",
-    category: "Sinalização & Frota",
-    client: "Veloce Logística",
-    year: "2023",
-    description: "Projeto gráfico completo de envelopamento de frotas e comunicação visual de galpões logísticos.",
-    image: "/cidade.avif",
-    colors: [
-      { name: "Vermelho Racing", hex: "#E63946" },
-      { name: "Cinza Chumbo", hex: "#2B2D42" },
-      { name: "Branco", hex: "#FFFFFF", border: true },
-    ],
-    tags: ["Logística", "Frota", "Sinalização"],
-  },
-  {
-    id: 6,
-    title: "Apex Engenharia",
-    category: "Editorial & Catálogos",
-    client: "Apex Construtora",
-    year: "2023",
-    description: "Catálogo impresso de alto padrão para empreendimentos imobiliários com acabamentos especiais.",
-    image: "/rua1.avif",
-    colors: [
-      { name: "Dourado", hex: "#D4AF37" },
-      { name: "Preto", hex: "#000000" },
-    ],
-    tags: ["Imobiliário", "Catálogos", "Impressão Especial"],
-  },
-  {
-    id: 7,
-    title: "Aura Cosméticos",
-    category: "Branding & Embalagens",
-    client: "Aura Beauty",
-    year: "2023",
-    description: "Linha de embalagens e rótulos para produtos de cuidados pessoais com toque sofisticado e minimalista.",
-    image: "/Ana Serra.avif",
-    colors: [
-      { name: "Nude Rose", hex: "#E8D4C8" },
-      { name: "Terracota", hex: "#B85B43" },
-    ],
-    tags: ["Embalagens", "Cosméticos", "Minimalista"],
-  },
-  {
-    id: 8,
-    title: "Lumina Arquitetura",
-    category: "Identidade Visual",
-    client: "Studio Lumina",
-    year: "2023",
-    description: "Manual de marca e portfólio físico para escritório de arquitetura renomado.",
-    image: "/Clara Rodrigues.avif",
-    colors: [
-      { name: "Cinza Concreto", hex: "#7A7A7A" },
-      { name: "Branco Puro", hex: "#FFFFFF", border: true },
-    ],
-    tags: ["Arquitetura", "Identidade Visual", "Portfólio Físico"],
-  },
-  {
-    id: 9,
-    title: "Vortex Tecnologia",
-    category: "Endomarketing & Kit Boas-Vindas",
-    client: "Vortex Corp",
-    year: "2023",
-    description: "Criação de kits onboarding para colaboradores e ambientação temática de escritórios.",
-    image: "/robo1.avif",
-    colors: [
-      { name: "Roxo Elétrico", hex: "#6C5CE7" },
-      { name: "Ciano", hex: "#00CECB" },
-    ],
-    tags: ["Endomarketing", "Onboarding", "Kits"],
-  },
-  {
-    id: 10,
-    title: "Urban Gastronomia",
-    category: "Comunicação Visual & Cardápios",
-    client: "Grupo Urban",
-    year: "2023",
-    description: "Sinalização interna, cardápios em materiais nobres e comunicação de fachada.",
-    image: "/Ricardo Mendoça.avif",
-    colors: [
-      { name: "Verde Oliva", hex: "#556B2F" },
-      { name: "Madeira Warm", hex: "#8B4513" },
-    ],
-    tags: ["Gastronomia", "Sinalização", "Cardápios"],
-  },
-  {
-    id: 11,
-    title: "Orbital Energia",
-    category: "Marketing Institucional",
-    client: "Orbital Soluções",
-    year: "2023",
-    description: "Material institucional para feiras de negócios e apresentação executiva de impacto.",
-    image: "/eletrica1.avif",
-    colors: [
-      { name: "Azul Solar", hex: "#0077B6" },
-      { name: "Amarelo Ouro", hex: "#FFB703" },
-    ],
-    tags: ["Feiras", "Eventos", "Institucional"],
-  },
-  {
-    id: 12,
-    title: "Krypton Fitness",
-    category: "Comunicação Visual de Ambiente",
-    client: "Krypton Gyms",
-    year: "2023",
-    description: "Projeto de grafismos de parede, letreiros luminosos e sinalização de academia moderna.",
-    image: "/pessoas 1.avif",
-    colors: [
-      { name: "Vermelho Intenso", hex: "#D90429" },
-      { name: "Grafite", hex: "#2B2D42" },
-    ],
-    tags: ["Ambiente", "Sinalização", "Pontos de Venda"],
-  },
-  {
-    id: 13,
-    title: "Terra Viva Orgânicos",
-    category: "Design Ecológico & Embalagens",
-    client: "Terra Viva",
-    year: "2023",
-    description: "Embalagens sustentáveis com papel reciclado e tintas atóxicas para produtores orgânicos.",
-    image: "/cidade.avif",
-    colors: [
-      { name: "Verde Floresta", hex: "#2D6A4F" },
-      { name: "Kraft", hex: "#D4A373" },
-    ],
-    tags: ["Sustentabilidade", "Embalagens", "Ecológico"],
-  },
-  {
-    id: 14,
-    title: "Zenith Moda Autoral",
-    category: "Lookbook & Editorial",
-    client: "Zenith Atelier",
-    year: "2023",
-    description: "Concepção gráfica do lookbook de coleção e material de promoção para desfiles.",
-    image: "/Ana Serra.avif",
-    colors: [
-      { name: "Preto Absoluto", hex: "#000000" },
-      { name: "Prata Metallick", hex: "#E5E5E5", border: true },
-    ],
-    tags: ["Moda", "Lookbook", "Editorial"],
-  },
-  {
-    id: 15,
-    title: "Horizonte Transportes",
-    category: "Manual de Marca & Sinalização",
-    client: "Grupo Horizonte",
-    year: "2023",
-    description: "Standardização de frota nacional e guia completo de aplicação da marca em veículos comerciais.",
-    image: "/rua1.avif",
-    colors: [
-      { name: "Azul Profundo", hex: "#03045E" },
-      { name: "Laranja Alerta", hex: "#F77F00" },
-    ],
-    tags: ["Frota", "Manual de Marca", "Transportes"],
-  },
 ];
 
 export default function PortfolioCarousel() {
@@ -248,24 +69,24 @@ export default function PortfolioCarousel() {
   const touchStartX = useRef<number | null>(null);
 
   const total = portfolioProjectsList.length;
-  const currentProject = portfolioProjectsList[currentIndex];
+  const currentProject = portfolioProjectsList[currentIndex] || portfolioProjectsList[0];
 
   const nextSlide = () => {
-    if (isAnimating) return;
+    if (isAnimating || total <= 1) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % total);
     setTimeout(() => setIsAnimating(false), 400);
   };
 
   const prevSlide = () => {
-    if (isAnimating) return;
+    if (isAnimating || total <= 1) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev - 1 + total) % total);
     setTimeout(() => setIsAnimating(false), 400);
   };
 
   const goToSlide = (idx: number) => {
-    if (isAnimating || idx === currentIndex) return;
+    if (isAnimating || idx === currentIndex || total <= 1) return;
     setIsAnimating(true);
     setCurrentIndex(idx);
     setTimeout(() => setIsAnimating(false), 400);
@@ -292,7 +113,7 @@ export default function PortfolioCarousel() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [total]);
 
   // Touch Swipe navigation
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -332,16 +153,26 @@ export default function PortfolioCarousel() {
 
           <button
             onClick={prevSlide}
+            disabled={total <= 1}
             aria-label="Projeto anterior"
-            className="w-12 h-12 rounded-full border border-black/15 bg-white hover:bg-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm active:scale-95 cursor-pointer"
+            className={`w-12 h-12 rounded-full border border-black/15 flex items-center justify-center transition-all duration-300 shadow-sm active:scale-95 ${
+              total <= 1
+                ? "bg-black/5 text-black/20 cursor-not-allowed border-black/10"
+                : "bg-white hover:bg-black hover:text-white cursor-pointer"
+            }`}
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
 
           <button
             onClick={nextSlide}
+            disabled={total <= 1}
             aria-label="Próximo projeto"
-            className="w-12 h-12 rounded-full border border-black/15 bg-black text-cyan-brand hover:bg-black/80 flex items-center justify-center transition-all duration-300 shadow-sm active:scale-95 cursor-pointer"
+            className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 shadow-sm active:scale-95 ${
+              total <= 1
+                ? "bg-black/5 text-black/20 cursor-not-allowed border-black/10"
+                : "bg-black text-cyan-brand hover:bg-black/80 cursor-pointer border-black/15"
+            }`}
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -355,7 +186,7 @@ export default function PortfolioCarousel() {
         className="relative w-full rounded-[36px] md:rounded-[48px] overflow-hidden bg-white border border-black/10 shadow-xl transition-all duration-500 min-h-[600px]"
       >
         {/* ════════════════════════════════════════════════════════════ */}
-        {/* BRAND CARD 1: 27 DE SETEMBRO - DISTRIBUIDORA DE PEÇAS (CLEAN) */}
+        {/* BRAND CARD: 27 DE SETEMBRO - DISTRIBUIDORA DE PEÇAS (OFICIAL) */}
         {/* ════════════════════════════════════════════════════════════ */}
         {currentProject.isSpecialBrand27 ? (
           <div className="w-full flex flex-col lg:flex-row min-h-[640px]">
@@ -517,10 +348,10 @@ export default function PortfolioCarousel() {
           </div>
         ) : (
           /* ════════════════════════════════════════════════════════════ */
-          /* STANDARD PORTFOLIO CARD (PROJETOS 2 A 15)                   */
+          /* CARD PADRÃO PARA NOVOS PROJETOS QUE FOREM ADICIONADOS       */
           /* ════════════════════════════════════════════════════════════ */
           <div className="w-full flex flex-col lg:flex-row min-h-[600px]">
-            {/* Split Media Column */}
+            {/* Coluna da Imagem */}
             <div className="lg:w-7/12 relative min-h-[340px] md:min-h-[450px] lg:min-h-full bg-black/5 overflow-hidden group">
               {currentProject.image && (
                 <Image
@@ -540,7 +371,7 @@ export default function PortfolioCarousel() {
                 </span>
               </div>
 
-              {/* Overlay Button "Visualizar Imagem Inteira" */}
+              {/* Botão "Visualizar Imagem Inteira" */}
               {currentProject.image && (
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 z-20">
                   <button
@@ -559,7 +390,7 @@ export default function PortfolioCarousel() {
               )}
             </div>
 
-            {/* Split Content Column */}
+            {/* Coluna do Conteúdo */}
             <div className="lg:w-5/12 p-8 md:p-12 lg:p-14 bg-white flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -596,7 +427,7 @@ export default function PortfolioCarousel() {
                   </div>
                 )}
 
-                {/* Color Palette Samples */}
+                {/* Amostras da Paleta de Cores */}
                 {currentProject.colors && (
                   <div className="mb-8">
                     <h4 className="text-xs font-alt uppercase tracking-wider text-black/40 font-semibold mb-3">
@@ -619,7 +450,7 @@ export default function PortfolioCarousel() {
                 )}
               </div>
 
-              {/* Bottom Action */}
+              {/* Ação do Rodapé */}
               <div className="pt-6 border-t border-black/10 flex items-center justify-between">
                 <OriginButton
                   href="/contato"
@@ -639,21 +470,23 @@ export default function PortfolioCarousel() {
         )}
       </div>
 
-      {/* ── Carousel Thumbnails / Dots Pagination ── */}
-      <div className="flex items-center justify-center gap-2 mt-8 flex-wrap px-4">
-        {portfolioProjectsList.map((p, idx) => (
-          <button
-            key={p.id}
-            onClick={() => goToSlide(idx)}
-            aria-label={`Ir para projeto ${p.title}`}
-            className={`transition-all duration-300 rounded-full cursor-pointer ${
-              idx === currentIndex
-                ? "w-10 h-3 bg-black"
-                : "w-3 h-3 bg-black/20 hover:bg-black/50"
-            }`}
-          />
-        ))}
-      </div>
+      {/* ── Carousel Thumbnails / Dots Pagination (se mais de 1 projeto) ── */}
+      {total > 1 && (
+        <div className="flex items-center justify-center gap-2 mt-8 flex-wrap px-4">
+          {portfolioProjectsList.map((p, idx) => (
+            <button
+              key={p.id}
+              onClick={() => goToSlide(idx)}
+              aria-label={`Ir para projeto ${p.title}`}
+              className={`transition-all duration-300 rounded-full cursor-pointer ${
+                idx === currentIndex
+                  ? "w-10 h-3 bg-black"
+                  : "w-3 h-3 bg-black/20 hover:bg-black/50"
+              }`}
+            />
+          ))}
+        </div>
+      )}
 
       {/* ════════════════════════════════════════════════════════════ */}
       {/* MODAL LIGHTBOX DE VISUALIZAÇÃO DA IMAGEM INTEIRA             */}
