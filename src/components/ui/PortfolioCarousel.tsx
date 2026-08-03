@@ -449,15 +449,15 @@ export default function PortfolioCarousel() {
                 <span className="text-[11px] font-alt uppercase tracking-widest text-black/40 font-semibold">
                   Paleta de Cores Oficial
                 </span>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-wrap">
                   {currentProject.colors?.map((c, i) => (
-                    <div key={i} className="flex items-center gap-2">
+                    <div key={i} className="flex items-center gap-2 bg-black/5 px-2.5 py-1 rounded-full border border-black/5">
                       <div
-                        className={`w-5 h-5 rounded-full shadow-xs ${c.border ? "border border-black/20" : ""}`}
+                        className={`w-4 h-4 rounded-full shadow-xs ${c.border ? "border border-black/20" : ""}`}
                         style={{ backgroundColor: c.hex }}
                       />
                       <span className="text-xs font-alt font-medium text-[#282622]">
-                        {c.name}
+                        {c.name} <span className="text-black/50 font-mono text-[11px] font-normal">({c.hex})</span>
                       </span>
                     </div>
                   ))}
@@ -604,13 +604,13 @@ export default function PortfolioCarousel() {
                     </h4>
                     <div className="flex items-center gap-3 flex-wrap">
                       {currentProject.colors.map((c, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
+                        <div key={idx} className="flex items-center gap-2 bg-black/5 px-2.5 py-1 rounded-full border border-black/5">
                           <div
-                            className={`w-5 h-5 rounded-full shadow-xs ${c.border ? "border border-black/20" : ""}`}
+                            className={`w-4 h-4 rounded-full shadow-xs ${c.border ? "border border-black/20" : ""}`}
                             style={{ backgroundColor: c.hex }}
                           />
-                          <span className="text-xs font-alt font-light text-black/70">
-                            {c.name}
+                          <span className="text-xs font-alt font-medium text-black/80">
+                            {c.name} <span className="text-black/50 font-mono text-[11px] font-normal">({c.hex})</span>
                           </span>
                         </div>
                       ))}
