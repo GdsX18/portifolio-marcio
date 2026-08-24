@@ -37,10 +37,10 @@ export default function Footer() {
 
           {/* Tagline / Frase de Marca */}
           <div className="flex flex-col lg:items-end gap-3 max-w-md">
-            <span className="px-4 py-1.5 bg-black text-cyan-brand font-alt text-xs uppercase tracking-widest font-medium rounded-full self-start lg:self-end">
+            <span className="px-5 py-2 bg-black text-cyan-brand font-alt text-xs uppercase tracking-widest font-medium rounded-full self-start lg:self-end">
               Excelência &amp; Posicionamento
             </span>
-            <p className="text-xs md:text-sm font-alt font-light text-black/70 leading-relaxed lg:text-right">
+            <p className="text-xs md:text-sm hover:text-cyan-brand transition-all duration-500 font-alt font-light text-black/90 leading-relaxed lg:text-right">
               Transformamos a essência da sua marca em comunicação sólida, memorável e de alto impacto visual.
             </p>
           </div>
@@ -53,19 +53,19 @@ export default function Footer() {
             <span className="font-sans font-semibold text-black uppercase tracking-widest text-[11px] mb-2 text-black/40">
               Navegação
             </span>
-            <Link href="/" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+            <Link href="/" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-3 transition-all duration-300 border-b border-black/5 pb-0">
               Início
             </Link>
-            <Link href="/portfolio" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+            <Link href="/portfolio" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-3 transition-all duration-300 border-b border-black/5 pb-0">
               Portfólio de Projetos
             </Link>
-            <Link href="/sobre" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+            <Link href="/sobre" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-3 transition-all duration-300 border-b border-black/5 pb-0">
               Expertise &amp; Equipe
             </Link>
-            <Link href="/solucoes" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+            <Link href="/solucoes" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-3 transition-all duration-300 border-b border-black/5 pb-0">
               Soluções Gráficas
             </Link>
-            <Link href="/contato" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-1 transition-all duration-300">
+            <Link href="/contato" className="text-sm text-black/80 hover:text-cyan-brand hover:translate-x-3 transition-all duration-300 border-b border-black/5 pb-0">
               Contato Estratégico
             </Link>
           </div>

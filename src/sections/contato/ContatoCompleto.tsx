@@ -297,7 +297,7 @@ export default function ContatoCompleto() {
                 São Paulo - SP, 01121-000, Brasil
               </p>
               <div>
-                <p className="font-sans font-light text-xl md:text-2xl mb-2">info@nomedosite.com</p>
+                <p className="font-sans font-light text-xl md:text-2xl mb-2">STUDIONEVES@gmail.com</p>
                 <p className="font-sans font-light text-xl md:text-2xl">(11) 3456-7890</p>
               </div>
             </div>
